@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - pwd
+      - ls -l
+      - echo Installing dependencies...
+      - npm install
+
+  pre-build:
+    commands:
+      - cat package.json
+
+  build:
+    on-failure: ABORT
+    commands:
+      - echo Building project...
+      - npm run build
+      - echo Build succesfully.
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: ".next/" # Adjust the base-directory to match your project's output directory.
