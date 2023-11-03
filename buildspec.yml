@@ -10,7 +10,7 @@ phases:
       - echo Installing dependencies...
       - npm install
 
-  pre-build:
+  pre_build:
     commands:
       - cat package.json
 
