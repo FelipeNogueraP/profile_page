@@ -5,14 +5,8 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - pwd
-      - ls -l
       - echo Installing dependencies...
       - npm install
-
-  pre_build:
-    commands:
-      - cat package.json
 
   build:
     on-failure: ABORT
