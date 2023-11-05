@@ -14,8 +14,7 @@ phases:
       - echo Building project...
       - npm run build
       - echo Build succesfully.
-      - npm install -g serve
-      - serve -s build
+
   post_build:
     commands:
       - echo Build completed on `date`
